@@ -1,0 +1,270 @@
+Changelog Dungeon Game
+Author: Zachary Wilson
+
+-Dungeon Generator-
+
+1/21/16
+
+#Wrote functions to generate hardness map
+##Fills 2D array with random number (1,9)
+
+#Began writing functions to generate random rooms
+##Uses a 2D array [10][4] to store their x,y,width and height
+
+1/22/16
+
+#Finished random room generation
+##Tested and working without error
+
+1/23/16
+
+#Began writing path generating functions
+##Used a BFS and the hardness map to find paths
+##Method worked okay, few bugs to clean up
+
+1/24/16
+
+#Decided to ditch BFS for path generator and go with
+#simpler method
+
+#Decided to used room structs to store room information
+#instead of the array
+##Bug that causes rooms to overlap results
+
+1/25/16
+
+#Could not figure out why using structs was not working
+#properly so went beck to array storage method
+
+1/26/16
+
+#Got rid of the hardness map and all related functions
+
+#Implemented simpler path generating functions
+##Added aditional element to room array which tells
+##if a room has been connected or not
+
+#Made tweaks such as max room size and max amount of rooms
+
+#After tests, code seems to be working to specs
+
+1/28/16
+
+#Began changing dungeon generation so code was simpler and easier
+#to add on to
+##Store dungeon in array of cells structs which store hardness
+##and floor type
+##Store rooms in room struct array
+
+1/29/16
+
+#Finished changing dungeon generation as mentioned above
+##Tested and working as it was before changes
+
+1/30/16
+
+#Began working on saving and loading
+
+#Started working on loading from file
+##Wrote function to initialize dungeon cell array and outer wall
+##Wrote function to generate the proper filepath
+
+1/31/16
+
+#Wrote function to load from file
+##Seems to be working properly
+
+#Wrote function to save from file
+
+#Both save and load functions work properly
+
+#Wrote behavior to accept save and load switches from user
+##Works as intended
+
+2/2/16
+
+#Began working on pathfinding
+
+#Wrote function to place PC in random room
+
+#Wote funton to print the path-finding map out
+
+2/3/16
+
+#Wrote functions to initialize heap
+##One puts all of the dungeon cells in the heap
+##One puts only floor cells in the heap
+##Both do not include the immutable outer wall cells
+##Used fibonacci heap
+
+2/4/16
+
+#Implemented dijkstra's algorithm
+##Currently seg faulting :(
+
+2/5/16
+
+#Fixed bug with dijskra's and the program seems to be working well
+
+2/6/16
+
+#Changed dungeon generator to use a form of dijkstras for the corridors
+
+2/8/16
+
+#Created a main file which will be executable from now on
+
+#Included save/load ability to this project
+
+2/13/16
+
+#Started work on the players and monsters
+
+#Implemented funtion to move player around in rooms and corridors randomly
+##Player is very dumb
+
+2/18/16
+
+#Made character, pc, and npc structs and a npc_pc union
+
+#Wrote funtions for initializing characters
+
+#Began working on monster movements
+##Implemented function table based on smartness and telepathy traits
+
+#Wrote funtion for smart and telepathic monsters
+
+#Wrote function to handle and execute turn taking
+##Uses heap
+
+2/19/16
+
+#Wrote funtion for telepathic, not smart monsters
+
+2/20/16
+
+#Wrote funtion to determine line of sight to player
+
+#Wrote funtion for smart, not telepatic monsters
+
+2/21/16
+
+#Wrote funtion for not smart, not telepathic monsters
+
+2/22/16
+
+#General tweaks to all monster movement funtions
+
+2/23/16
+
+#Wrote funtion for eratic behavior
+
+#Changed player AI to be kinda smart
+##Still loses a lot
+
+#Lots of testing and bug squashing
+
+3/4/16
+
+#Began work on gui funtions
+
+#Changed function that prints map to use ncurses
+
+3/5/16
+
+#Implemented function to get keystrokes
+
+#Implemented character control
+
+3/6/16
+
+#Implemented stairs
+
+3/7/16
+
+#Began working on monster list
+
+3/8/16
+
+#Finished working on monster list
+
+3/9/16
+
+#Added "fancy" win/lose screens
+
+3/21/16
+
+#began working on converting character to cpp classes: pc and npc with
+#character being the super class
+
+3/22/16
+
+#finished converting c to cpp classes
+
+#added interface for c to use the cpp classes
+
+#added fog of war to pc class
+
+3/27/16
+
+#converted all c classes to cpp classes
+#got rid of c interface
+#got program in working order with cpp
+
+3/28/16
+
+#began working on monster definition parsing
+
+3/29/16
+
+#finished work on monster definition parsing
+#squashed bugs
+
+4/3/16
+
+#implemented proffs object and monster description parsers into my code
+
+4/4/16
+
+#made object class
+#made factory for building monster and object instances
+#added color for objects and instances
+#added stackable objects
+
+4/5/16
+
+#added pass through ability to code
+
+4/8/16
+
+#began working on inventory
+#added an inventory class
+
+4/9/16
+
+#added functions to display inventory and equipment
+#added function to drop equipment
+
+4/10/16
+
+#added messages
+#added cheat control
+#added function to display item descriptions
+
+4/11/16
+
+#added function to equip, dequip, and expunge items
+
+4/12/16
+
+#completed updating combat
+
+4/18/16
+
+#added ranged combat
+#added score system
+#began working on high score system
+
+4/19/16
+
+#high score system not working right so it was scrapped
